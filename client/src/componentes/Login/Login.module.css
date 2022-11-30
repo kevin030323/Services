@@ -1,0 +1,106 @@
+.content {
+  height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 0 10rem;
+  animation: aparecer 1.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.contentBack {
+  text-align: start;
+  height: 3rem;
+}
+
+.back {
+  margin: 0.2rem 0 0 1rem;
+}
+
+.inputs {
+  height: 80%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.contentInputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+  margin-top: 1rem;
+}
+.contentInputs label {
+  font-size: 1.4rem;
+}
+
+.contentInputs input {
+  width: 280px;
+  border-radius: 40px;
+  border: 1px solid #444;
+  height: 40px;
+}
+
+.errors {
+  color: red;
+  margin: 0 0 0 0.2rem;
+  font-size: 0.9rem;
+}
+
+.iniciar {
+  background-color: #7b2cbf;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 40px;
+  margin-top: 1rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.iniciarNone {
+  background-color: #999;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 40px;
+  margin-top: 1rem;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.fondo {
+  width: 50%;
+}
+
+.fondo img {
+  width: 600px;
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 0;
+  }
+  .inputs {
+    width: 100%;
+    align-items: center;
+  }
+  .fondo {
+    display: none;
+  }
+}

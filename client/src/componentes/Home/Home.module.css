@@ -1,0 +1,54 @@
+.content {
+  display: flex;
+  padding: 2rem 4rem;
+}
+
+.contentPosts {
+  width: 50%;
+  animation: aparecer 1.5s ease;
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.image {
+  width: 50%;
+  height: 100vh;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  animation: imegen 1.5s ease;
+}
+
+@keyframes imegen {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 0;
+    justify-content: center;
+  }
+  .contentPosts {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+  .image {
+    display: none;
+  }
+}
