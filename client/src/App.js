@@ -6,11 +6,6 @@ import Login from "./componentes/Login/Login";
 import Register from "./componentes/Register/Register";
 import CreatePublic from "./componentes/CreatePublic/CreatePublic";
 import Profile from "./componentes/Profile/Profile";
-import dotenv from "dotenv";
-import axios from "axios";
-dotenv.config();
-
-axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 function App() {
   return (
