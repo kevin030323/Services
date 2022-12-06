@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 export function getServices() {
   return async function (distpach) {
-    const services = await axios("http://localhost:3001/posts");
+    const services = await axios("/posts");
     return distpach({ type: "GET_SERVICES", payload: services.data });
   };
 }
@@ -11,7 +11,7 @@ export function getServices() {
 export function login(data) {
   data.phoneNumber = data.phoneNumber * 1;
   return async function (distpach) {
-    const dataUser = await axios.post("http://localhost:3001/login", data);
+    const dataUser = await axios.post("/login", data);
     if (Array.isArray(dataUser.data)) {
       Swal.fire({
         icon: "success",
@@ -42,7 +42,7 @@ export function logOut() {
 export function createAccount(data) {
   data.phoneNumber = data.phoneNumber * 1;
   return async function (distpach) {
-    const dataUser = await axios.post("http://localhost:3001/newUser", data);
+    const dataUser = await axios.post("/newUser", data);
     Swal.fire({
       icon: "success",
       title: "Cuenta creada correctamente",
@@ -58,7 +58,7 @@ export function createAccount(data) {
 
 export function createPost(data) {
   return async function (distpach) {
-    const post = await axios.post("http://localhost:3001/newPosts", data);
+    const post = await axios.post("/newPosts", data);
     return distpach({ type: "CREATEA_POST" });
   };
 }
