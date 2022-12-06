@@ -62,3 +62,8 @@ export function createPost(data) {
     return distpach({ type: "CREATEA_POST" });
   };
 }
+export function searchName(data) {
+  return async function (distpach) {
+    return distpach({ type: "SEARCH_NAME", payload: data });
+  };
+}

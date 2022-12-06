@@ -20,6 +20,12 @@ export default function reducer(state = initialState, { type, payload }) {
       return { ...state, user: setInLocalStorage("user", {}) };
     case "CREATEA_ACCOUNT":
       return { ...state, user: setInLocalStorage("user", payload) };
+    case "SEARCH_NAME":
+      let filterPost = state.posts.filter((element) =>
+        element.title.toLowerCase().includes(payload.toLowerCase())
+      );
+      return { ...state, posts: filterPost };
+
     default:
       return { ...state };
   }
