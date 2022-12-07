@@ -9,7 +9,6 @@ import Profile from "./componentes/Profile/Profile";
 import dotenv from "dotenv";
 import axios from "axios";
 dotenv.config();
-
 axios.defaults.baseURL = process.env.REACT_APP_API || "http://localhost:3001";
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/createPublic" element={<CreatePublic />} />
         <Route path="/profile" element={<Profile />} />
-
         <Route path="/home" element={<Home />} />
       </Routes>
     </div>
