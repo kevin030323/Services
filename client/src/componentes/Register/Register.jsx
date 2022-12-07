@@ -50,7 +50,7 @@ export default function Register() {
 
     if (!dataRegister.location)
       error.location = "Debes ingresar la cuidad en donde vivas";
-    else if (!/^[A-Z]+$/i.test(dataRegister.location))
+    else if (!/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(dataRegister.location))
       error.location = "Ingrese una cuidad valido";
     return error;
   }
