@@ -11,7 +11,10 @@ import { useEffect } from "react";
 export default function Profile() {
   const user = useSelector((state) => state.user);
   let posts = useSelector((state) => state.posts);
-  posts = posts.filter((element) => element.idUser === user[0].id);
+  const usersPosts = !posts.length
+    ? 0
+    : posts.filter((element) => element.idUser === user[0].id);
+
   const dispatch = useDispatch();
   const navegate = useNavigate();
 
@@ -47,19 +50,32 @@ export default function Profile() {
             </button>
           </div>
 
-          <div className={style.contentPublics}>
-            {posts.lemgth ? posts.map((element, index) => {
-              return (
-                <CardServices
-                  title={element.title}
-                  servicesFor={element.nameUser}
-                  location={element.location}
-                  price={element.rangePrice}
-                  contact={element.phoneNumber}
-                  key={index}
-                />
-              );
-            }): <h5>Aun no tines publicaciones subidas</h5> }
+          <div
+            className={
+              !usersPosts.length
+                ? style.contentPublicsNone
+                : style.contentPublics
+            }
+          >
+            <h6>Tus pulicaciones</h6>
+            {!usersPosts.length ? (
+              <h4>Aún no tienes publicaciones subidas.</h4>
+            ) : (
+              usersPosts.map((element, index) => {
+                return (
+                  <CardServices
+                    title={element.title}
+                    servicesFor={element.nameUser}
+                    location={element.location}
+                    price={element.rangePrice}
+                    contact={element.phoneNumber}
+                    id={element.id}
+                    key={index}
+                    delate={true}
+                  />
+                );
+              })
+            )}
           </div>
         </div>
       </div>

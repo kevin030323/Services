@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./CardServices.module.css";
 import { FaMoneyBillWave } from "react-icons/fa";
+import { delatePost } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function CardServices({
   title,
@@ -8,7 +10,17 @@ export default function CardServices({
   location,
   contact,
   price,
+  id,
+  delate,
 }) {
+  const dispatch = useDispatch();
+
+  function handelDelatePost() {
+    dispatch(delatePost({ idPost: id }));
+    setTimeout(function () {
+      window.location.reload(true);
+    }, 1200);
+  }
   return (
     <div className={style.content}>
       <div className={style.contentInfo}>
@@ -21,14 +33,19 @@ export default function CardServices({
           {<FaMoneyBillWave size="20" className={style.money} />}
           {price}
         </p>
-
-        <a
-          href={`https://wa.me/${contact}`}
-          target="_blank"
-          className={style.contanct}
-        >
-          Contactar
-        </a>
+        {!delate ? (
+          <a
+            href={`https://wa.me/${contact}`}
+            target="_blank"
+            className={style.contanct}
+          >
+            Contactar
+          </a>
+        ) : (
+          <button className={style.delate} onClick={() => handelDelatePost()}>
+            Eliminar
+          </button>
+        )}
       </div>
     </div>
   );

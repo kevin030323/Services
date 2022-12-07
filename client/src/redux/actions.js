@@ -57,11 +57,25 @@ export function createAccount(data) {
 }
 
 export function createPost(data) {
+  data.phoneNumber = 54 + data.phoneNumber;
   return async function (distpach) {
     const post = await axios.post("/newPosts", data);
     return distpach({ type: "CREATEA_POST" });
   };
 }
+export function delatePost(data) {
+  return async function (distpach) {
+    const post = await axios.put("/newPosts", data);
+    Swal.fire({
+      icon: "success",
+      title: "Publicacion eliminada correactamente",
+      showConfirmButton: false,
+
+      width: "600",
+    });
+  };
+}
+
 export function searchName(data) {
   return async function (distpach) {
     return distpach({ type: "SEARCH_NAME", payload: data });

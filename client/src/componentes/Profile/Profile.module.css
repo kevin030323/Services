@@ -55,8 +55,24 @@
   padding-right: 1rem;
 }
 
-.contentPublics::-webkit-scrollbar {
-  background-color: red;
+.contentPublicsNone {
+  height: 400px;
+  padding-right: 1rem;
+}
+.contentPublics h6,
+.contentPublicsNone h6 {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0;
+  padding-bottom: 1rem;
+}
+
+.contentPublics h4,
+.contentPublicsNone h4 {
+  color: #fff;
+
+  border-bottom: 1px solid #999;
+  font-size: 2rem;
 }
 
 .logOut {

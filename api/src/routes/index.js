@@ -70,4 +70,14 @@ router.post("/newPosts", async (req, res) => {
   res.send("Publicacion creada,");
 });
 
+router.put("/newPosts", async (req, res) => {
+  const { idPost } = req.body;
+  const newPost = await Post.destroy({
+    where: {
+      id: idPost,
+    },
+  });
+  res.send("Publicacion Eliminada correactamente");
+});
+
 module.exports = router;

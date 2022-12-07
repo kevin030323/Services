@@ -20,7 +20,7 @@ export default function Home() {
       <div className={style.content}>
         <div className={style.contentPosts}>
           {!res.length ? (
-            <h1>Lista de pusblicaciones vacia</h1>
+            <h1>Lista de publicaciones vacía.</h1>
           ) : (
             res.map((element, index) => {
               return (

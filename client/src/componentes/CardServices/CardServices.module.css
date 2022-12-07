@@ -53,6 +53,18 @@
   cursor: pointer;
 }
 
+.delate {
+  background-color: red;
+  border: none;
+  padding: 0.8rem;
+  color: #fff;
+  border-radius: 40px;
+  font-size: 1.2rem;
+  width: 150px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   .content {
     width: 350px;

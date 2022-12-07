@@ -19,6 +19,7 @@ export default function Register() {
   });
   const [error, setError] = useState({});
 
+  const codigos = [];
   function handelLoginData(e) {
     e.preventDefault();
     setDataRegister({ ...dataRegister, [e.target.name]: e.target.value });
@@ -28,12 +29,29 @@ export default function Register() {
   function validate() {
     let error = {};
     if (dataRegister.name === "") error.name = "Debes ingresar tu nombre";
+    else if (!/^[A-Z]+$/i.test(dataRegister.name))
+      error.name = "Ingrese un nombre valido";
+
     if (!dataRegister.lastName) error.lastName = "Debes ingresar tu apellido";
+    else if (!/^[A-Z]+$/i.test(dataRegister.lastName))
+      error.lastName = "Ingrese un apellido valido";
+
     if (!dataRegister.password)
       error.password = "Debes ingresar una constaraseña";
+    else if (dataRegister.password.length < 8)
+      error.password = "La contraseña debe tener minimo 8 caracteres";
+
     if (!dataRegister.phoneNumber)
       error.phoneNumber = "Debes ingresar tu numero de telefono";
-    if (!dataRegister.location) error.location = "Debes ingresar tu ciudad";
+    else if (isNaN(dataRegister.phoneNumber))
+      error.phoneNumber = "Solo se permiten numeros";
+    else if (dataRegister.phoneNumber.length < 9)
+      error.phoneNumber = "Debe ingresar un numero correcto";
+
+    if (!dataRegister.location)
+      error.location = "Debes ingresar la cuidad en donde vivas";
+    else if (!/^[A-Z]+$/i.test(dataRegister.location))
+      error.location = "Ingrese una cuidad valido";
     return error;
   }
 
