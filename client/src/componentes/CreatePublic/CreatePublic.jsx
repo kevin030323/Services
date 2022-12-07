@@ -39,7 +39,7 @@ export default function CreatePublic() {
 
     if (!dataForm.location)
       error.location = "Debes ingresar la cuidad donde ofrescas este servicio";
-    else if (!/^[A-Z]+$/i.test(dataForm.location))
+    else if (!/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(dataForm.location))
       error.location = "Ingrese una cuidad valido";
 
     if (!dataForm.rangePriceOne || !dataForm.rangePriceOne)
