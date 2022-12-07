@@ -48,7 +48,7 @@ export default function Profile() {
           </div>
 
           <div className={style.contentPublics}>
-            {posts.map((element, index) => {
+            {posts.lemgth ? posts.map((element, index) => {
               return (
                 <CardServices
                   title={element.title}
@@ -59,7 +59,7 @@ export default function Profile() {
                   key={index}
                 />
               );
-            })}
+            }): <h5>Aun no tines publicaciones subidas</h5> }
           </div>
         </div>
       </div>
