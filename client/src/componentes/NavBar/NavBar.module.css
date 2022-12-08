@@ -32,6 +32,7 @@
   background-color: transparent;
   border: 1px solid #444;
   border-radius: 40px;
+  width: 200px;
   display: flex;
 }
 .searchBar input {
@@ -71,13 +72,77 @@
   border: none;
 }
 
+.navegationSec {
+  display: none;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.butonMenu {
+  visibility: hidden;
+}
+
+.buttons {
+  display: none;
+}
+
 @media (max-width: 600px) {
   .content {
+    width: 100%;
     height: 150px;
+    position: fixed;
+    display: none;
     flex-wrap: wrap;
-    justify-content: space-between;
+    height: 100vh;
+    flex-direction: column-reverse;
+    justify-content: center;
     padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
   }
+  .buttons {
+    display: flex;
+  }
+
+  .contentNone {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    position: fixed;
+    flex-wrap: wrap;
+    height: 100vh;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(2px);
+  }
+
+  .navegationSec {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+  }
+
+  .navegation {
+    display: none;
+  }
+
+  .butonMenu {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+  }
+
+  .butonMenuNone {
+    display: none;
+  }
+
   .searchBar {
     width: 150px;
   }
@@ -90,5 +155,7 @@
   .sesionAndPosts {
     width: 100%;
     justify-content: space-evenly;
+    flex-direction: column;
+    margin-bottom: 2rem;
   }
 }
