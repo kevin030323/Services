@@ -87,7 +87,7 @@
 
 @media (max-width: 600px) {
   .contentImage img {
-    margin-top: 4rem;
+    margin-top: -4rem;
   }
   .contentInfo {
     flex-direction: column;

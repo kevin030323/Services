@@ -88,17 +88,7 @@
 
 @media (max-width: 600px) {
   .content {
-    width: 100%;
-    height: 150px;
-    position: fixed;
     display: none;
-    flex-wrap: wrap;
-    height: 100vh;
-    flex-direction: column-reverse;
-    justify-content: center;
-    padding: 0 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(2px);
   }
   .buttons {
     display: flex;
@@ -108,6 +98,7 @@
     display: flex;
     width: 100%;
     height: 150px;
+    z-index: 1;
     position: fixed;
     flex-wrap: wrap;
     height: 100vh;
@@ -134,7 +125,7 @@
   .butonMenu {
     visibility: visible;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
   }
@@ -153,9 +144,17 @@
   }
 
   .sesionAndPosts {
-    width: 100%;
-    justify-content: space-evenly;
+    width: 80%;
     flex-direction: column;
     margin-bottom: 2rem;
+  }
+
+  .sesion {
+    margin-bottom: 1rem;
+  }
+
+  .logoProfile {
+    margin: 1rem 0;
+    color: #000;
   }
 }

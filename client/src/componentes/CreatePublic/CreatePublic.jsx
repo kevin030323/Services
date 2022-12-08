@@ -37,8 +37,7 @@ export default function CreatePublic() {
     else if (dataForm.phoneNumber.length < 9)
       error.phoneNumber = "Debe ingresar un numero correcto";
 
-    if (!dataForm.location)
-      error.location = "Debes ingresar la cuidad donde ofrescas este servicio";
+    if (!dataForm.location) error.location = "Ingresar la cuidad";
     else if (!/^[ a-zA-ZñÑáéíóúÁÉÍÓÚ]+$/.test(dataForm.location))
       error.location = "Ingrese una cuidad valido";
 
@@ -83,7 +82,7 @@ export default function CreatePublic() {
       <div className={style.content}>
         <form action="" onSubmit={(e) => handelsubmit(e)}>
           <div className={style.contentInputs}>
-            <label htmlFor="">Titulo de servico que ofreces</label>
+            <label htmlFor="">Titulo del servico que ofreces</label>
             <input
               type="text"
               name="title"
@@ -94,7 +93,7 @@ export default function CreatePublic() {
             {error.title && <p className={style.errors}>{error.title}</p>}
           </div>
           <div className={style.contentInputs}>
-            <label htmlFor="">Ciudad</label>
+            <label htmlFor="">Ciudad donde se ofresca el servico</label>
             <input
               type="text"
               name="location"

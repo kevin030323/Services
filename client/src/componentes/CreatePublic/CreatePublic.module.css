@@ -106,6 +106,10 @@
     width: 100%;
     align-items: center;
   }
+  .contentInputs {
+    align-items: center;
+  }
+
   .fondo {
     display: none;
   }
