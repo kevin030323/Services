@@ -57,7 +57,7 @@ export function createAccount(data) {
 }
 
 export function createPost(data) {
-  data.phoneNumber = 54 + data.phoneNumber;
+  data.phoneNumber = data.codePhoneNumber + data.phoneNumber;
   return async function (distpach) {
     const post = await axios.post("/newPosts", data);
     return distpach({ type: "CREATEA_POST" });
