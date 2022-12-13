@@ -36,8 +36,37 @@
   font-size: 1.4rem;
 }
 
+.contentInputsNumber {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.contentInputsNumber label {
+  width: 100%;
+  font-size: 1.4rem;
+}
+
 .inputs {
   width: 280px;
+  border-radius: 40px;
+  border: 1px solid #444;
+  height: 40px;
+}
+
+.inputCountries {
+  max-width: 200px;
+  text-align: center;
+  border-radius: 40px;
+  border: 1px solid #444;
+  height: 40px;
+  background-color: #fff;
+}
+
+.inputPhoneNumber {
+  width: 150px;
   border-radius: 40px;
   border: 1px solid #444;
   height: 40px;
