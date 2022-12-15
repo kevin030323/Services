@@ -43,6 +43,14 @@ export function createAccount(data) {
   data.phoneNumber = data.phoneNumber * 1;
   return async function (distpach) {
     const dataUser = await axios.post("/newUser", data);
+    console.log(dataUser.data);
+    if (!Array.isArray(dataUser.data)) {
+      return Swal.fire({
+        icon: "error",
+        title: "Este numero ya se encuentra registrado",
+        width: "600",
+      });
+    }
     Swal.fire({
       icon: "success",
       title: "Cuenta creada correctamente",
