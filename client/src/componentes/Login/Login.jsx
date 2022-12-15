@@ -6,7 +6,6 @@ import { login } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { BiLeftArrowAlt } from "react-icons/bi";
-import Swal from "sweetalert2";
 
 export default function Login() {
   const user = useSelector((state) => state.user);
