@@ -38,6 +38,12 @@ router.post("/login", async (req, res) => {
 
 router.post("/newUser", async (req, res) => {
   const { name, lastName, password, phoneNumber, location } = req.body;
+  const allUsers = await User.findAll();
+  const filter = allUsers.filter(
+    (element) => phoneNumber === element.phoneNumber
+  );
+  if (filter.length)
+    return res.json({ msj: "Este numero ya se encuentra registrado" });
   const newUser = await User.create({
     name,
     lastName,
