@@ -6,6 +6,7 @@ import { useState } from "react";
 import { createAccount } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { BiLeftArrowAlt } from "react-icons/bi";
+import Swal from "sweetalert2";
 
 export default function Register() {
   const dispatch = useDispatch();
@@ -57,6 +58,19 @@ export default function Register() {
 
   function handaelCrateAccount(e) {
     e.preventDefault();
+    if (
+      !dataRegister.name ||
+      !dataRegister.lastName ||
+      !dataRegister.password ||
+      !dataRegister.phoneNumber ||
+      !dataRegister.location
+    ) {
+      return Swal.fire({
+        icon: "error",
+        title: "Le falta completar los campos",
+        width: "600",
+      });
+    }
     dispatch(createAccount(dataRegister));
     setDataRegister({
       name: "",

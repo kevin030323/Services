@@ -3081,6 +3081,19 @@ export default function CreatePublic() {
 
   function handelsubmit(e) {
     e.preventDefault();
+    if (
+      !dataForm.title ||
+      !dataForm.location ||
+      !dataForm.rangePriceOne ||
+      !dataForm.rangePriceTwo ||
+      !dataForm.phoneNumber
+    ) {
+      return Swal.fire({
+        icon: "error",
+        title: "Le falta completar los campos",
+        width: "600",
+      });
+    }
     dispatch(createPost(dataForm));
     setDataForm({
       title: "",
