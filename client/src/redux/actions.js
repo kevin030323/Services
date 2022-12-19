@@ -8,6 +8,14 @@ export function getServices() {
   };
 }
 
+export function updatedata(data) {
+  data.phoneNumber = data.phoneNumber * 1;
+  return async function (distpach) {
+    const user = await axios.post("/login", data);
+    distpach({ type: "LOGIN", payload: user.data });
+  };
+}
+
 export function login(data) {
   data.phoneNumber = data.phoneNumber * 1;
   return async function (distpach) {
@@ -43,7 +51,6 @@ export function createAccount(data) {
   data.phoneNumber = data.phoneNumber * 1;
   return async function (distpach) {
     const dataUser = await axios.post("/newUser", data);
-    console.log(dataUser.data);
     if (!Array.isArray(dataUser.data)) {
       return Swal.fire({
         icon: "error",
@@ -61,6 +68,21 @@ export function createAccount(data) {
       window.location.href = "/";
     }, 1500);
     return distpach({ type: "CREATEA_ACCOUNT", payload: dataUser.data });
+  };
+}
+
+export function editUser(data) {
+  return async function (distpach) {
+    const dataUser = await axios.put("/user", data);
+    Swal.fire({
+      icon: "success",
+      title: "Informacion actualizada correctamente",
+      showConfirmButton: false,
+      width: "600",
+    });
+    setTimeout(function () {
+      window.location.reload(true);
+    }, 1000);
   };
 }
 
