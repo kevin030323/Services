@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import NavBar from "../NavBar/NavBar";
 import style from "./Profile.module.css";
 import userFondo from "../../assets/user.png";
-import { logOut, getServices } from "../../redux/actions";
+import { logOut, getServices, editUser, updatedata } from "../../redux/actions";
 import { useNavigate } from "react-router-dom";
 import CardServices from "../CardServices/CardServices";
 import { useEffect } from "react";
+import { BiPencil } from "react-icons/bi";
+import { useState } from "react";
 
 export default function Profile() {
   const user = useSelector((state) => state.user);
@@ -17,15 +19,38 @@ export default function Profile() {
 
   const dispatch = useDispatch();
   const navegate = useNavigate();
+  const [viewEditForm, setViewEditForm] = useState(false);
+  const [dataEditUser, setDataEditUser] = useState({
+    newName: "",
+    newLastname: "",
+    idUser: user[0].id,
+  });
 
   function handelLogOut() {
     dispatch(logOut());
     navegate("/");
   }
 
+  function handelStateData(e) {
+    e.preventDefault();
+    setDataEditUser({ ...dataEditUser, [e.target.name]: e.target.value });
+  }
+
+  function handelEditProfile(e) {
+    e.preventDefault();
+    dispatch(editUser(dataEditUser));
+  }
+
   useEffect(() => {
+    dispatch(
+      updatedata({
+        phoneNumber: user[0].phoneNumber,
+        password: user[0].password,
+      })
+    );
     dispatch(getServices());
   }, [dispatch]);
+
   return (
     <div>
       <NavBar />
@@ -35,9 +60,39 @@ export default function Profile() {
         </div>
         <div className={style.contentInfo}>
           <div className={style.contentProfileInfo}>
-            <h5
-              className={style.nameUser}
-            >{`${user[0].name} ${user[0].lastName}`}</h5>
+            <div className={style.contentUserName}>
+              <h5
+                className={style.nameUser}
+              >{`${user[0].name} ${user[0].lastName}`}</h5>
+
+              <BiPencil
+                size="20"
+                className={style.butonEdit}
+                onClick={() => setViewEditForm(true)}
+              />
+            </div>
+            <form
+              className={
+                viewEditForm === true
+                  ? style.formUserName
+                  : style.formUserNameNone
+              }
+              onSubmit={(e) => handelEditProfile(e)}
+            >
+              <input
+                type="text"
+                name="newName"
+                placeholder="Nuevo nombre"
+                onChange={(e) => handelStateData(e)}
+              />
+              <input
+                type="text"
+                name="newLastname"
+                placeholder="Nuevo apellido"
+                onChange={(e) => handelStateData(e)}
+              />
+              <button type="submit">Guardar</button>
+            </form>
             <p className={style.dataUser}>
               Numero de telefono:{" "}
               <span className={style.data}>{user[0].phoneNumber}</span>

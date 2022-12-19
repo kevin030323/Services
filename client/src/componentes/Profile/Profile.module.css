@@ -34,6 +34,16 @@
   color: #fff;
 }
 
+.contentUserName {
+  display: flex;
+  padding: 0.1rem;
+}
+
+.butonEdit {
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
 .nameUser {
   margin: 0;
   font-size: 3rem;
@@ -42,6 +52,29 @@
 .dataUser {
   margin: 0;
   font-size: 1.2rem;
+}
+.formUserNameNone {
+  display: none;
+}
+
+.formUserName {
+  display: block;
+}
+
+.formUserName input {
+  border-radius: 40px;
+  background-color: #fff;
+  border: none;
+  margin-right: 1rem;
+  padding: 0.5rem;
+}
+.formUserName button {
+  border-radius: 40px;
+  background-color: #7b2cbf;
+  color: #fff;
+  padding: 0.5rem;
+  border: none;
+  margin-right: 1rem;
 }
 
 .data {
