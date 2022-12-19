@@ -54,6 +54,36 @@ router.post("/newUser", async (req, res) => {
   res.json([newUser]);
 });
 
+router.put("/user", async (req, res) => {
+  const { idUser, newName, newLastname } = req.body;
+  if (!idUser) {
+    return res.send("Se requiere la id de el usuario");
+  }
+  if (newName) {
+    await User.update(
+      { name: newName },
+      {
+        where: {
+          id: idUser,
+        },
+      }
+    );
+  }
+  if (newLastname) {
+    await User.update(
+      { lastName: newLastname },
+      {
+        where: {
+          id: idUser,
+        },
+      }
+    );
+  }
+  res.json({
+    msj: "Los datos de el usuario an sido actualizados correctamente",
+  });
+});
+
 router.post("/newPosts", async (req, res) => {
   const {
     title,
