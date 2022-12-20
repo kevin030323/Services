@@ -1,5 +1,5 @@
 .content {
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -7,13 +7,22 @@
   padding: 0 10rem;
 }
 
-.contentBack {
+.contentAll {
   text-align: start;
-  height: 3rem;
+  background: rgb(123, 44, 191);
+  background: linear-gradient(
+    235deg,
+    rgba(123, 44, 191, 0.3589635683374912) 0%,
+    rgba(123, 44, 191, 0.8799719716988358) 65%
+  );
 }
 
 .back {
   margin: 0.2rem 0 0 1rem;
+  margin: 0.2rem 0 0 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .content form {
@@ -34,12 +43,13 @@
 }
 .contentInputs label {
   font-size: 1.4rem;
+  color: #ddd;
 }
 
 .contentInputsNumber {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin-top: 1rem;
 }
@@ -47,29 +57,46 @@
 .contentInputsNumber label {
   width: 100%;
   font-size: 1.4rem;
+  color: #ddd;
 }
 
 .inputs {
   width: 280px;
-  border-radius: 40px;
-  border: 1px solid #444;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
   height: 40px;
+  outline: none;
+  color: #fff;
 }
 
 .inputCountries {
   max-width: 200px;
-  text-align: center;
-  border-radius: 40px;
-  border: 1px solid #444;
   height: 40px;
-  background-color: #fff;
+  text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+
+.inputCountries option {
+  background-color: #7b2cbf;
 }
 
 .inputPhoneNumber {
   width: 150px;
-  border-radius: 40px;
-  border: 1px solid #444;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
   height: 40px;
+  outline: none;
+  color: #fff;
+  margin-left: 1rem;
+}
+
+.inputPhoneNumber::placeholder {
+  color: #fff;
 }
 
 .rangePrice {
@@ -80,13 +107,17 @@
 .rangePrice p {
   font-size: 1.5rem;
   margin: 0 1rem;
+  color: #fff;
 }
 
 .price {
   width: 100px;
-  border-radius: 40px;
-  border: 1px solid #444;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
   height: 40px;
+  outline: none;
+  color: #fff;
 }
 
 .fondo {
@@ -98,7 +129,12 @@
 }
 
 .public {
-  background-color: #7b2cbf;
+  background: rgb(123, 44, 191);
+  background: linear-gradient(
+    90deg,
+    rgba(123, 44, 191, 0.5438375179173232) 0%,
+    rgba(123, 44, 191, 1) 48%
+  );
   color: #fff;
   cursor: pointer;
   text-decoration: none;

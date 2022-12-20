@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import NavBar from "../NavBar/NavBar";
 import style from "./Profile.module.css";
-import userFondo from "../../assets/user.png";
 import { logOut, getServices, editUser, updatedata } from "../../redux/actions";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, NavLink } from "react-router-dom";
 import CardServices from "../CardServices/CardServices";
 import { useEffect } from "react";
 import { BiPencil } from "react-icons/bi";
 import { useState } from "react";
+import { BiLeftArrowAlt } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
 
 export default function Profile() {
   const user = useSelector((state) => state.user);
@@ -23,7 +23,7 @@ export default function Profile() {
   const [dataEditUser, setDataEditUser] = useState({
     newName: "",
     newLastname: "",
-    idUser: user[0].id,
+    idUser: user[0]?.id,
   });
 
   function handelLogOut() {
@@ -52,54 +52,59 @@ export default function Profile() {
   }, [dispatch]);
 
   return (
-    <div>
-      <NavBar />
+    <div className={style.contentAll}>
+      {/* <NavBar /> */}
+      <NavLink to="/">
+        <BiLeftArrowAlt size="40" className={style.back} />
+      </NavLink>
       <div>
-        <div className={style.contentImage}>
-          <img src={userFondo} alt="" />
-        </div>
         <div className={style.contentInfo}>
           <div className={style.contentProfileInfo}>
-            <div className={style.contentUserName}>
-              <h5
-                className={style.nameUser}
-              >{`${user[0].name} ${user[0].lastName}`}</h5>
+            <CgProfile size="30" className={style.imageProfile} />
+            <div className={style.contentInfoProfile}>
+              <div className={style.contentUserName}>
+                <h5
+                  className={style.nameUser}
+                >{`${user[0].name} ${user[0].lastName}`}</h5>
 
-              <BiPencil
-                size="20"
-                className={style.butonEdit}
-                onClick={() => setViewEditForm(true)}
-              />
+                <BiPencil
+                  size="20"
+                  className={style.butonEdit}
+                  onClick={() => setViewEditForm(true)}
+                />
+              </div>
+              <form
+                className={
+                  viewEditForm === true
+                    ? style.formUserName
+                    : style.formUserNameNone
+                }
+                onSubmit={(e) => handelEditProfile(e)}
+              >
+                <input
+                  type="text"
+                  name="newName"
+                  placeholder="Nuevo nombre"
+                  onChange={(e) => handelStateData(e)}
+                />
+                <input
+                  type="text"
+                  name="newLastname"
+                  placeholder="Nuevo apellido"
+                  onChange={(e) => handelStateData(e)}
+                />
+                <button type="submit">Guardar</button>
+              </form>
+              <p className={style.dataUser}>
+                Numero de telefono:{" "}
+                <span className={style.data}>{user[0].phoneNumber}</span>
+              </p>
+              <p className={style.dataUser}>
+                Ubicacion:{" "}
+                <span className={style.data}>{user[0].location}</span>
+              </p>
             </div>
-            <form
-              className={
-                viewEditForm === true
-                  ? style.formUserName
-                  : style.formUserNameNone
-              }
-              onSubmit={(e) => handelEditProfile(e)}
-            >
-              <input
-                type="text"
-                name="newName"
-                placeholder="Nuevo nombre"
-                onChange={(e) => handelStateData(e)}
-              />
-              <input
-                type="text"
-                name="newLastname"
-                placeholder="Nuevo apellido"
-                onChange={(e) => handelStateData(e)}
-              />
-              <button type="submit">Guardar</button>
-            </form>
-            <p className={style.dataUser}>
-              Numero de telefono:{" "}
-              <span className={style.data}>{user[0].phoneNumber}</span>
-            </p>
-            <p className={style.dataUser}>
-              Ubicacion: <span className={style.data}>{user[0].location}</span>
-            </p>
+
             <button onClick={() => handelLogOut()} className={style.logOut}>
               Cerrar sesion
             </button>

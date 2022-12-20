@@ -35,7 +35,7 @@ export default function Login() {
   }
 
   return (
-    <div className={style.contentBack}>
+    <div className={style.contentAll}>
       <NavLink to="/">
         <BiLeftArrowAlt size="40" className={style.back} />
       </NavLink>
@@ -75,7 +75,12 @@ export default function Login() {
             iniciar sesion
           </button>
           <p>
-            ¿No tenes cuenta? {<NavLink to="/register">Crear cuenta</NavLink>}
+            ¿No tenes cuenta?{" "}
+            {
+              <NavLink to="/register" className={style.createAccount}>
+                Crear cuenta
+              </NavLink>
+            }
           </p>
         </form>
         <div className={style.fondo}>

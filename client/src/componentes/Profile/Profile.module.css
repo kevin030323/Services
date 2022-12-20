@@ -1,37 +1,49 @@
 .contentImage {
   width: 100%;
-  height: 110px;
+  height: 200px;
   display: flex;
+  justify-content: center;
 }
 
-.contentImage img {
-  width: 200px;
+.back {
+  margin: 0.2rem 0 0 1rem;
   position: absolute;
-  top: 7rem;
-  left: 7rem;
-  background-color: #fff;
-  border-radius: 50%;
+  top: 0;
+  left: 0;
 }
 
 .contentInfo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 7rem;
-  background: rgb(119, 47, 181);
+  height: 100vh;
+  background: url("../../assets/wave-haikei.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background: rgb(255, 255, 255);
   background: linear-gradient(
-    180deg,
-    rgba(119, 47, 181, 0.9387955011106005) 19%,
-    rgba(119, 47, 181, 0.4794117476091999) 82%,
-    rgba(119, 47, 181, 0.3169467616148022) 100%
-  );
-  height: 70vh;
+    0deg,
+    rgba(255, 255, 255, 0.00042015097054448614) 0%,
+    rgba(123, 44, 191, 1) 83%
+  ); */
+}
+
+.imageProfile {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
 }
 
 .contentProfileInfo {
-  margin: 1rem;
   text-align: start;
+  padding: 0 0 0 4rem;
   color: #fff;
+  width: 400px;
+  height: 400px;
+  margin-top: 1rem;
+}
+
+.contentInfoProfile {
 }
 
 .contentUserName {
@@ -46,7 +58,7 @@
 
 .nameUser {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .dataUser {
@@ -82,10 +94,11 @@
 }
 
 .contentPublics {
-  height: 400px;
   overflow: hidden;
   overflow-y: scroll;
   padding-right: 1rem;
+  width: 600px;
+  height: 400px;
 }
 
 .contentPublicsNone {
@@ -103,19 +116,21 @@
 .contentPublics h4,
 .contentPublicsNone h4 {
   color: #fff;
-
   border-bottom: 1px solid #999;
   font-size: 2rem;
 }
 
 .logOut {
   background-color: transparent;
-  border: 1px solid #000;
-  color: #fff;
+  border: 2px solid #000;
+  color: #000;
   border-radius: 40px;
   font-size: 1rem;
-  margin-top: 2rem;
+  margin: 1rem 2rem 0 0;
   padding: 0.5rem 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 @media (max-width: 600px) {

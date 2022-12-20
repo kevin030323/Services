@@ -74,7 +74,7 @@ export default function Navbar({ home, services }) {
         <form className={style.searchBar} onSubmit={(e) => dataSearch(e)}>
           <input
             type="text"
-            placeholder="Buscar servicios..."
+            placeholder="Buscar..."
             value={nameSearch}
             onChange={(e) => setNameSearch(e.target.value)}
           />

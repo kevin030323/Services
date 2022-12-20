@@ -3112,7 +3112,7 @@ export default function CreatePublic() {
   }
 
   return (
-    <div className={style.contentBack}>
+    <div className={style.contentAll}>
       <NavLink to="/">
         <BiLeftArrowAlt size="40" className={style.back} />
       </NavLink>
@@ -3181,6 +3181,7 @@ export default function CreatePublic() {
             <input
               type="text"
               name="phoneNumber"
+              placeholder="Numero de telefono"
               className={style.inputPhoneNumber}
               value={dataForm.phoneNumber}
               onChange={(e) => handelData(e)}

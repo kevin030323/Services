@@ -82,7 +82,7 @@ export default function Register() {
   }
 
   return (
-    <div className={style.contentBack}>
+    <div className={style.contentAll}>
       <NavLink to="/">
         <BiLeftArrowAlt size="40" className={style.back} />
       </NavLink>
