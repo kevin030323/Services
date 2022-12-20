@@ -85,4 +85,8 @@
   .contentImg img {
     width: 400px;
   }
+
+  .wave {
+    bottom: 180px;
+  }
 }
