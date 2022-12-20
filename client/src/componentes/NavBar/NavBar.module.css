@@ -116,7 +116,7 @@
     align-items: center;
     justify-content: center;
     padding: 0 1rem;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(2px);
   }
 
@@ -138,6 +138,7 @@
     z-index: 2;
     top: 10px;
     left: 10px;
+    color: #fff;
   }
 
   .butonMenuNone {
@@ -165,6 +166,6 @@
 
   .logoProfile {
     margin: 1rem 0;
-    color: #000;
+    color: #fff;
   }
 }
