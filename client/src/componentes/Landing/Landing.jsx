@@ -8,7 +8,6 @@ export default function Landing() {
   return (
     <div className={style.contetAll}>
       <NavBar home={true} />
-
       <div className={style.content}>
         <div></div>
         <div className={style.contentText}>

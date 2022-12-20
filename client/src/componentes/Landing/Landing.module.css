@@ -48,6 +48,10 @@
   height: 70%;
 }
 
+.contentImg img {
+  width: 70%;
+}
+
 .wave {
   width: 100%;
   height: 100px;
@@ -87,6 +91,23 @@
   }
 
   .wave {
-    bottom: 180px;
+    bottom: 150px;
+  }
+}
+
+@media (max-width: 400px) {
+  .wave {
+    bottom: 50px;
+  }
+  .content {
+    height: 90vh;
+  }
+
+  .contentText {
+    margin-top: 2rem;
+  }
+
+  .contentImg img {
+    width: 300px;
   }
 }
