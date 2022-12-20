@@ -1,3 +1,13 @@
+.contentAll {
+  background: rgb(123, 44, 191);
+  background: linear-gradient(
+    235deg,
+    rgba(123, 44, 191, 0.3589635683374912) 0%,
+    rgba(123, 44, 191, 0.8799719716988358) 65%
+  );
+  min-height: 100vh;
+}
+
 .content {
   display: flex;
   padding: 2rem 4rem;
@@ -6,6 +16,9 @@
 .contentPosts {
   width: 50%;
   animation: aparecer 1.5s ease;
+}
+.contentPosts h1 {
+  color: #fff;
 }
 
 .contentLoader {
@@ -67,20 +80,27 @@
 
 .image {
   width: 50%;
-  height: 100vh;
+  height: 70vh;
+  margin-top: 2rem;
   position: fixed;
   top: 15%;
   left: 50%;
-  animation: imegen 1.5s ease;
+
+  animation: movimiento 4s linear infinite;
+}
+.image img {
+  width: 600px;
 }
 
-@keyframes imegen {
-  from {
-    opacity: 0;
-    transform: translateX(50%);
+@keyframes movimiento {
+  0% {
+    transform: translateY(0px);
   }
-  to {
-    opacity: 1;
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(-0px);
   }
 }
 

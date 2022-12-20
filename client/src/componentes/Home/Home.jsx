@@ -18,7 +18,7 @@ export default function Home() {
   }, [distpach]);
 
   return (
-    <div>
+    <div className={style.contentAll}>
       <NavBar services={true} />
       <div className={style.content}>
         {loader ? (
