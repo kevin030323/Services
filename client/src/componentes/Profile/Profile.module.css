@@ -134,20 +134,35 @@
 }
 
 @media (max-width: 600px) {
-  .contentImage img {
-    margin-top: -4rem;
-  }
   .contentInfo {
     flex-direction: column;
     padding: 0;
-    height: 80vh;
+    height: 100vh;
+    background-color: #7b2cbf;
   }
   .contentProfileInfo {
-    margin-top: 8rem;
-    text-align: center;
+    margin: 8rem 0 0 0;
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
   .contentPublics {
     padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logOut {
+    background-color: #fff;
+    border: none;
+    border: 1px solid #ddd;
+    margin-right: 1rem;
   }
 }
