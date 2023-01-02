@@ -73,7 +73,7 @@ export function createAccount(data) {
 
 export function editUser(data) {
   return async function (distpach) {
-    const dataUser = await axios.put("/user", data);
+    await axios.put("/user", data);
     Swal.fire({
       icon: "success",
       title: "Informacion actualizada correctamente",
@@ -89,18 +89,18 @@ export function editUser(data) {
 export function createPost(data) {
   data.phoneNumber = data.codePhoneNumber + data.phoneNumber;
   return async function (distpach) {
-    const post = await axios.post("/newPosts", data);
+    await axios.post("/newPosts", data);
     return distpach({ type: "CREATEA_POST" });
   };
 }
+
 export function delatePost(data) {
   return async function (distpach) {
-    const post = await axios.put("/newPosts", data);
+    await axios.put("/newPosts", data);
     Swal.fire({
       icon: "success",
       title: "Publicacion eliminada correactamente",
       showConfirmButton: false,
-
       width: "600",
     });
   };
