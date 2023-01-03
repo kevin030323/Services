@@ -19,6 +19,12 @@ export default function Home() {
 
   return (
     <div className={style.contentAll}>
+      <div className={style.load}>
+        <div className={style.cortina}>
+          <div className={style.wave}></div>
+          <div className={style.wave2}></div>
+        </div>
+      </div>
       <NavBar services={true} />
       <div className={style.content}>
         {loader ? (

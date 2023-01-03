@@ -8,6 +8,86 @@
   min-height: 100vh;
 }
 
+.load {
+  width: 100%;
+  height: 100vh;
+  background: red;
+  position: fixed;
+  z-index: 1;
+  visibility: collapse;
+  animation: esperar 1s linear;
+}
+
+@keyframes esperar {
+  from {
+    visibility: visible;
+    background-color: #7b2cbf;
+  }
+  to {
+    visibility: visible;
+    background-color: #7b2cbf;
+  }
+}
+
+.cortina {
+  animation: cortina 1.5s linear;
+  background: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+@keyframes cortina {
+  from {
+    visibility: visible;
+    transform: translateY(150%);
+  }
+  to {
+    visibility: visible;
+    transform: translateY(-120%);
+  }
+}
+
+.wave {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  bottom: -100px;
+  background-image: url("../../assets/wave.png");
+  background-size: 1000px 100px;
+  rotate: 180deg;
+  animation: wave 8s linear infinite;
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 2000px;
+  }
+}
+
+.wave2 {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: -100px;
+  background-image: url("../../assets/wave.png");
+  background-size: 1000px 100px;
+  animation: wave2 8s linear infinite;
+}
+
+@keyframes wave2 {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 2000px;
+  }
+}
+
 .content {
   display: flex;
   padding: 2rem 4rem;
