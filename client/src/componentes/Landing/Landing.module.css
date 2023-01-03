@@ -7,21 +7,21 @@
   );
 }
 
+@keyframes hola {
+  0% {
+    background-color: #fff;
+  }
+  100% {
+    background-color: red;
+  }
+}
+
 .content {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80vh;
   padding: 0 4rem;
-}
-
-@keyframes wave {
-  0% {
-    background-position-x: 0;
-  }
-  100% {
-    background-position-x: 2000px;
-  }
 }
 
 .contentText {
@@ -63,12 +63,27 @@
   animation: wave 10s linear infinite;
 }
 
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 2000px;
+  }
+}
+
 @media (max-width: 600px) {
   .content {
     display: flex;
     flex-direction: column;
     padding: 0;
+    height: 100vh;
   }
+
+  .wave {
+    display: none;
+  }
+
   .contentText {
     width: 100%;
     height: max-content;
@@ -89,18 +104,14 @@
   .contentImg img {
     width: 400px;
   }
-
-  .wave {
-    bottom: 150px;
-  }
 }
 
 @media (max-width: 400px) {
   .wave {
-    bottom: 50px;
+    display: none;
   }
   .content {
-    height: 90vh;
+    height: 100vh;
   }
 
   .contentText {
