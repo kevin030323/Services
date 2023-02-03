@@ -29,7 +29,7 @@ async function newPost(req, res) {
   res.send("Publicacion creada,");
 }
 
-async function putPost(req, res) {
+async function deletePost(req, res) {
   const { idPost } = req.body;
   const newPost = await Post.destroy({
     where: {
@@ -39,4 +39,4 @@ async function putPost(req, res) {
   res.send("Publicacion Eliminada correactamente");
 }
 
-module.exports = { getPosts, newPost, putPost };
+module.exports = { getPosts, newPost, deletePost };
