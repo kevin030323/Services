@@ -71,15 +71,17 @@
 .newPost {
   color: #fff;
   text-decoration: none;
+  font-size: 1rem;
   background: rgb(0, 0, 0);
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.5) 0%,
     rgba(123, 44, 191, 1) 65%
   );
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1rem;
   border-radius: 40px;
   border: none;
+  cursor: pointer;
 }
 
 .navegationSec {

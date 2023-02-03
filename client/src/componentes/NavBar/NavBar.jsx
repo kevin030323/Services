@@ -92,7 +92,8 @@ export default function Navbar({ home, services }) {
             </NavLink>
           )}
           {!user.length ? (
-            <NavLink
+            <button
+              // to="/createPublic"
               className={style.newPost}
               onClick={() =>
                 Swal.fire({
@@ -110,9 +111,9 @@ export default function Navbar({ home, services }) {
               }
             >
               Publicar servicio
-            </NavLink>
+            </button>
           ) : (
-            <NavLink to={"/createPublic"} className={style.newPost}>
+            <NavLink to="/createPublic" className={style.newPost}>
               Publicar servicio
             </NavLink>
           )}
