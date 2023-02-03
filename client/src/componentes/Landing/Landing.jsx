@@ -2,7 +2,6 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import style from "./Landing.module.css";
 import fondo from "../../assets/undraw_coffee_break_h3uu.svg";
-import { NavLink } from "react-router-dom";
 
 export default function Landing() {
   return (
